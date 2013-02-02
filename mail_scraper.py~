@@ -1,0 +1,17 @@
+import MySQLdb
+form scrapy.settings import CrawlerSettings
+
+
+
+#I need to modify a litle the existent object for realize a transmiting mechanism of settings
+
+class MyCrawlerSettings(CrawlerSettings):
+	def __setitem__(self, opt_name, val_name):
+		self.settings_module.__setattr__(opt_name, val_name)
+
+
+try:
+	mydb = MySQLdb.connect(host = "localhost", user = "root", passwd = "kate")
+except  MySQLdb.Error as e:
+	print(e)
+

@@ -1,0 +1,10 @@
+2013-01-24 10:08:26+0000 [scrapy] INFO: Scrapy 0.17.0 started (bot: mail_ru)
+2013-01-24 10:08:26+0000 [mail_spider] INFO: Spider opened
+2013-01-24 10:08:26+0000 [scrapy] INFO: MailRuPipeline: Our sharashka is opend
+2013-01-24 10:08:26+0000 [scrapy] ERROR: Can't connect to Data Base(2002, "Can't connect to local MySQL server through socket '/run/mysqld/mysqld.sock' (2)")
+2013-01-24 10:08:26+0000 [scrapy] INFO: poka
+2013-01-24 10:09:23+0000 [scrapy] INFO: Scrapy 0.17.0 started (bot: mail_ru)
+2013-01-24 10:09:23+0000 [mail_spider] INFO: Spider opened
+2013-01-24 10:09:23+0000 [scrapy] INFO: MailRuPipeline: Our sharashka is opend
+2013-01-24 10:09:23+0000 [scrapy] ERROR: Can't connect to Data Base(2002, "Can't connect to local MySQL server through socket '/run/mysqld/mysqld.sock' (2)")
+2013-01-24 10:09:23+0000 [scrapy] INFO: poka

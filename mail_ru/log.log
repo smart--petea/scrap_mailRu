@@ -1,0 +1,150 @@
+2013-01-24 08:46:22+0000 [scrapy] INFO: Scrapy 0.17.0 started (bot: mail_ru)
+2013-01-24 08:46:22+0000 [mail_spider] INFO: Spider opened
+2013-01-24 08:46:22+0000 [scrapy] ERROR: Can't connect to Data Base(2002, "Can't connect to local MySQL server through socket '/run/mysqld/mysqld.sock' (2)")
+2013-01-24 08:46:22+0000 [mail_spider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2013-01-24 08:46:22+0000 [scrapy] DEBUG: Telnet console listening on 0.0.0.0:6023
+2013-01-24 08:46:22+0000 [scrapy] DEBUG: Web service listening on 0.0.0.0:6080
+2013-01-24 08:46:22+0000 [mail_spider] DEBUG: Redirecting (301) to <GET http://mail.ru/> from <GET http://www.mail.ru>
+2013-01-24 08:46:23+0000 [mail_spider] DEBUG: Received cookies from: <200 http://mail.ru/>
+	Set-Cookie: mrcu=1D1150FE51EF655167B6BC23E925; expires=Fri, 20 Jan 2023 08:46:39 GMT; path=/; domain=.mail.ru
+2013-01-24 08:46:23+0000 [mail_spider] DEBUG: Crawled (200) <GET http://mail.ru/> (referer: None)
+2013-01-24 08:46:23+0000 [mail_spider] DEBUG: Sending cookies to: <POST https://auth.mail.ru/cgi-bin/auth>
+	Cookie: mrcu=1D1150FE51EF655167B6BC23E925
+2013-01-24 08:46:24+0000 [mail_spider] DEBUG: Received cookies from: <200 https://auth.mail.ru/cgi-bin/auth>
+	Set-Cookie: Mpop=1358844400:62725d5056616e6619050219081d00071c07024f6a5d5e465e02000504021e0a07031e4a545943446e684552415455165450595a164047:smart__petea@mail.ru:; expires=Mon, 22 Apr 2013 08:46:40 GMT; path=/; domain=.mail.ru
+	Set-Cookie: t=obLD1AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABABoGwgcA; expires=Sun, 21 Jul 2013 08:46:40 GMT; path=/; domain=.mail.ru
+2013-01-24 08:46:24+0000 [mail_spider] DEBUG: Crawled (200) <POST https://auth.mail.ru/cgi-bin/auth> (referer: http://mail.ru/)
+2013-01-24 08:46:24+0000 [mail_spider] DEBUG: Sending cookies to: <GET https://e.mail.ru/cgi-bin/msglist?back=1>
+	Cookie: Mpop=1358844400:62725d5056616e6619050219081d00071c07024f6a5d5e465e02000504021e0a07031e4a545943446e684552415455165450595a164047:smart__petea@mail.ru:; mrcu=1D1150FE51EF655167B6BC23E925; t=obLD1AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABABoGwgcA
+2013-01-24 08:46:27+0000 [mail_spider] DEBUG: Crawled (200) <GET https://e.mail.ru/cgi-bin/msglist?back=1> (referer: https://auth.mail.ru/cgi-bin/auth)
+2013-01-24 08:46:27+0000 [mail_spider] DEBUG: Sending cookies to: <POST https://e.mail.ru/cgi-bin/readmsg>
+	Cookie: Mpop=1358844400:62725d5056616e6619050219081d00071c07024f6a5d5e465e02000504021e0a07031e4a545943446e684552415455165450595a164047:smart__petea@mail.ru:; mrcu=1D1150FE51EF655167B6BC23E925; t=obLD1AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABABoGwgcA
+2013-01-24 08:46:27+0000 [mail_spider] DEBUG: Crawled (200) <POST https://e.mail.ru/cgi-bin/readmsg> (referer: https://e.mail.ru/cgi-bin/msglist?back=1)
+2013-01-24 08:46:27+0000 [mail_spider] ERROR: Spider error processing <POST https://e.mail.ru/cgi-bin/readmsg>
+	Traceback (most recent call last):
+	  File "/usr/lib/python2.7/site-packages/twisted/internet/base.py", line 805, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/usr/lib/python2.7/site-packages/twisted/internet/task.py", line 607, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/usr/lib/python2.7/site-packages/twisted/internet/task.py", line 484, in _oneWorkUnit
+	    result = next(self._iterator)
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/offsite.py", line 28, in process_spider_output
+	    for x in result:
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/referer.py", line 22, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/root/mail_ru/mail_ru/spidermiddleware/host.py", line 22, in <genexpr>
+	    return (_set_host(r) for r in result or ())
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/urllength.py", line 33, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/depth.py", line 50, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/root/mail_ru/mail_ru/spiders/mail_spider.py", line 61, in parse_EmailBody
+	    item['let_body_plain'] = item['let_body_plain']
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/item.py", line 49, in __getitem__
+	    return self._values[key]
+	exceptions.KeyError: 'let_body_plain'
+	
+2013-01-24 08:46:27+0000 [mail_spider] INFO: Closing spider (finished)
+2013-01-24 08:46:27+0000 [mail_spider] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1998,
+	 'downloader/request_count': 5,
+	 'downloader/request_method_count/GET': 3,
+	 'downloader/request_method_count/POST': 2,
+	 'downloader/response_bytes': 574273,
+	 'downloader/response_count': 5,
+	 'downloader/response_status_count/200': 4,
+	 'downloader/response_status_count/301': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2013, 1, 24, 8, 46, 27, 835457),
+	 'log_count/DEBUG': 12,
+	 'log_count/ERROR': 2,
+	 'log_count/INFO': 4,
+	 'request_depth_max': 3,
+	 'response_received_count': 4,
+	 'scheduler/dequeued': 5,
+	 'scheduler/dequeued/memory': 5,
+	 'scheduler/enqueued': 5,
+	 'scheduler/enqueued/memory': 5,
+	 'spider_exceptions/KeyError': 1,
+	 'start_time': datetime.datetime(2013, 1, 24, 8, 46, 22, 239594)}
+2013-01-24 08:46:27+0000 [mail_spider] INFO: Spider closed (finished)
+2013-01-24 08:47:34+0000 [scrapy] INFO: Scrapy 0.17.0 started (bot: mail_ru)
+2013-01-24 08:47:34+0000 [mail_spider] INFO: Spider opened
+2013-01-24 08:47:34+0000 [scrapy] ERROR: Can't connect to Data Base(2002, "Can't connect to local MySQL server through socket '/run/mysqld/mysqld.sock' (2)")
+2013-01-24 08:47:34+0000 [mail_spider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2013-01-24 08:47:34+0000 [scrapy] DEBUG: Telnet console listening on 0.0.0.0:6023
+2013-01-24 08:47:34+0000 [scrapy] DEBUG: Web service listening on 0.0.0.0:6080
+2013-01-24 08:47:35+0000 [mail_spider] DEBUG: Redirecting (301) to <GET http://mail.ru/> from <GET http://www.mail.ru>
+2013-01-24 08:47:36+0000 [mail_spider] DEBUG: Received cookies from: <200 http://mail.ru/>
+	Set-Cookie: mrcu=1BF450FE52377BD57FCBBC23E925; expires=Fri, 20 Jan 2023 08:47:51 GMT; path=/; domain=.mail.ru
+2013-01-24 08:47:36+0000 [mail_spider] DEBUG: Crawled (200) <GET http://mail.ru/> (referer: None)
+2013-01-24 08:47:36+0000 [mail_spider] DEBUG: Sending cookies to: <POST https://auth.mail.ru/cgi-bin/auth>
+	Cookie: mrcu=1BF450FE52377BD57FCBBC23E925
+2013-01-24 08:47:36+0000 [mail_spider] DEBUG: Received cookies from: <200 https://auth.mail.ru/cgi-bin/auth>
+	Set-Cookie: Mpop=1358844473:58770b6f505b5a5d19050219081d00071c07024f6a5d5e465e02000504021e0a07031e4a545943446e684552415455165450595a164047:smart__petea@mail.ru:; expires=Mon, 22 Apr 2013 08:47:53 GMT; path=/; domain=.mail.ru
+	Set-Cookie: t=obLD1AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABABoGwgcA; expires=Sun, 21 Jul 2013 08:47:53 GMT; path=/; domain=.mail.ru
+2013-01-24 08:47:36+0000 [mail_spider] DEBUG: Crawled (200) <POST https://auth.mail.ru/cgi-bin/auth> (referer: http://mail.ru/)
+2013-01-24 08:47:36+0000 [mail_spider] DEBUG: Sending cookies to: <GET https://e.mail.ru/cgi-bin/msglist?back=1>
+	Cookie: Mpop=1358844473:58770b6f505b5a5d19050219081d00071c07024f6a5d5e465e02000504021e0a07031e4a545943446e684552415455165450595a164047:smart__petea@mail.ru:; mrcu=1BF450FE52377BD57FCBBC23E925; t=obLD1AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABABoGwgcA
+2013-01-24 08:47:38+0000 [mail_spider] DEBUG: Crawled (200) <GET https://e.mail.ru/cgi-bin/msglist?back=1> (referer: https://auth.mail.ru/cgi-bin/auth)
+2013-01-24 08:47:38+0000 [mail_spider] DEBUG: Sending cookies to: <POST https://e.mail.ru/cgi-bin/readmsg>
+	Cookie: Mpop=1358844473:58770b6f505b5a5d19050219081d00071c07024f6a5d5e465e02000504021e0a07031e4a545943446e684552415455165450595a164047:smart__petea@mail.ru:; mrcu=1BF450FE52377BD57FCBBC23E925; t=obLD1AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABABoGwgcA
+2013-01-24 08:47:39+0000 [mail_spider] DEBUG: Crawled (200) <POST https://e.mail.ru/cgi-bin/readmsg> (referer: https://e.mail.ru/cgi-bin/msglist?back=1)
+2013-01-24 08:47:39+0000 [mail_spider] ERROR: Spider error processing <POST https://e.mail.ru/cgi-bin/readmsg>
+	Traceback (most recent call last):
+	  File "/usr/lib/python2.7/site-packages/twisted/internet/base.py", line 805, in runUntilCurrent
+	    call.func(*call.args, **call.kw)
+	  File "/usr/lib/python2.7/site-packages/twisted/internet/task.py", line 607, in _tick
+	    taskObj._oneWorkUnit()
+	  File "/usr/lib/python2.7/site-packages/twisted/internet/task.py", line 484, in _oneWorkUnit
+	    result = next(self._iterator)
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/utils/defer.py", line 57, in <genexpr>
+	    work = (callable(elem, *args, **named) for elem in iterable)
+	--- <exception caught here> ---
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/utils/defer.py", line 96, in iter_errback
+	    yield it.next()
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/offsite.py", line 28, in process_spider_output
+	    for x in result:
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/referer.py", line 22, in <genexpr>
+	    return (_set_referer(r) for r in result or ())
+	  File "/root/mail_ru/mail_ru/spidermiddleware/host.py", line 22, in <genexpr>
+	    return (_set_host(r) for r in result or ())
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/urllength.py", line 33, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/contrib/spidermiddleware/depth.py", line 50, in <genexpr>
+	    return (r for r in result or () if _filter(r))
+	  File "/root/mail_ru/mail_ru/spiders/mail_spider.py", line 61, in parse_EmailBody
+	    item['let_body_plain'] = item['let_body_plain']
+	  File "/usr/lib/python2.7/site-packages/Scrapy-0.17.0-py2.7.egg/scrapy/item.py", line 49, in __getitem__
+	    return self._values[key]
+	exceptions.KeyError: 'let_body_plain'
+	
+2013-01-24 08:47:39+0000 [mail_spider] INFO: Closing spider (finished)
+2013-01-24 08:47:39+0000 [mail_spider] INFO: Dumping Scrapy stats:
+	{'downloader/request_bytes': 1997,
+	 'downloader/request_count': 5,
+	 'downloader/request_method_count/GET': 3,
+	 'downloader/request_method_count/POST': 2,
+	 'downloader/response_bytes': 574157,
+	 'downloader/response_count': 5,
+	 'downloader/response_status_count/200': 4,
+	 'downloader/response_status_count/301': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2013, 1, 24, 8, 47, 39, 574988),
+	 'log_count/DEBUG': 12,
+	 'log_count/ERROR': 2,
+	 'log_count/INFO': 4,
+	 'request_depth_max': 3,
+	 'response_received_count': 4,
+	 'scheduler/dequeued': 5,
+	 'scheduler/dequeued/memory': 5,
+	 'scheduler/enqueued': 5,
+	 'scheduler/enqueued/memory': 5,
+	 'spider_exceptions/KeyError': 1,
+	 'start_time': datetime.datetime(2013, 1, 24, 8, 47, 34, 908355)}
+2013-01-24 08:47:39+0000 [mail_spider] INFO: Spider closed (finished)
